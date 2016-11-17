@@ -7,7 +7,7 @@ angular.module("service",[])
         //文章分类
         "class":function () {
             //jsonp请求 请求地址
-            $http.jsonp("http://www.phonegap100.com/appapi.php",{
+            $http.jsonp("www.phonegap100.com/appapi.php",{
                 //请求参数
                 "params":{
                     "a":"getPortalCate",
@@ -24,7 +24,7 @@ angular.module("service",[])
         },
         //文章列表
         "list":function (catId,num) {
-            $http.jsonp("http://www.phonegap100.com/appapi.php",{
+            $http.jsonp("www.phonegap100.com/appapi.php",{
                 "params":{
                     "a": "getPortalList",
                     "catid": catId,
@@ -40,7 +40,7 @@ angular.module("service",[])
         },
         //文章详情
         "detail":function (aid) {
-            $http.jsonp("http://www.phonegap100.com/appapi.php",{
+            $http.jsonp("www.phonegap100.com/appapi.php",{
                 "params":{
                     "a":"getPortalArticle",
                     "aid":aid,
@@ -59,7 +59,7 @@ angular.module("service",[])
     return {
         "class":function () {
             //http://www.phonegap100.com/appapi.php?a=getThreadCate
-            $http.jsonp("http://www.phonegap100.com/appapi.php",{
+            $http.jsonp("www.phonegap100.com/appapi.php",{
                 "params":{
                     "a":"getThreadCate",
                     "callback":"JSON_CALLBACK"
@@ -74,7 +74,7 @@ angular.module("service",[])
         },
         "list":function (fid,page) {
             //http://www.phonegap100.com/appapi.php?a=getThreadList&fid=2&page=1
-            $http.jsonp("http://www.phonegap100.com/appapi.php",{
+            $http.jsonp("www.phonegap100.com/appapi.php",{
                 "params":{
                     "a":"getThreadList",
                     "fid":fid,
@@ -90,7 +90,7 @@ angular.module("service",[])
         },
         "detail":function (tid) {
             //http://www.phonegap100.com/appapi.php?a=getThreadContent&tid=138
-            $http.jsonp("http://www.phonegap100.com/appapi.php",{
+            $http.jsonp("www.phonegap100.com/appapi.php",{
                 "params":{
                     "a":"getThreadContent",
                     "tid":tid,
