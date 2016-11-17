@@ -1,0 +1,22 @@
+<ion-view view-title="文章列表">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="item in listList" class="list">
+                <a class="item item-thumbnail-left" href="#tab/articleDetail/{{item.aid}}">
+                    <!--有pic的显示,否则显示默认图片-->
+                    <img src="http://www.phonegap100.com/data/attachment/{{item.pic}}" ng-if="item.pic">
+                    <img src="img/pic.jpg" ng-if="!item.pic">
+                    <h2>{{item.title}}</h2>
+                </a>
+            </ion-item>
+        </ion-list>
+
+        <!--下拉加载(获取的data为空时,移除)-->
+        <ion-infinite-scroll ng-if="listLength"
+                on-infinite="loadMore()"
+                distance="1%">
+        </ion-infinite-scroll>
+        <!--data为空时提示加载完成-->
+        <p ng-if="!listLength" class="list-warning">数据全部加载完毕!</p>
+    </ion-content>
+</ion-view>

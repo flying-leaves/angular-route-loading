@@ -1,0 +1,19 @@
+<ion-view view-title="帖子列表">
+    <ion-content>
+        <ion-item ng-repeat="item in talkListList" ng-if="dataLength">
+            <a href="#tab/talkDetail/{{item.tid}}">
+                <h2>{{item.subject}}</h2>
+                <p>
+                    <span>{{item.author}}</span>
+                    <i>{{item.lastpost+"000"|date:"yyyy-MM-dd hh:mm:ss"}}</i>
+                </p>
+            </a>
+        </ion-item>
+
+        <ion-infinite-scroll
+                on-infinite="loadMore()"
+                distance="1%" ng-if="dataLength">
+        </ion-infinite-scroll>
+        <p ng-if="!dataLength" class="list-warning">数据全部加载完毕</p>
+    </ion-content>
+</ion-view>

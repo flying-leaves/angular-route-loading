@@ -1,0 +1,10 @@
+<ion-view view-title="帖子分类">
+    <ion-content>
+        <ion-item ng-repeat="item in talkClassList" class="talkClass" ng-if="item">
+            <a href="#/tab/talkList/{{item.fid}}">{{item.name}}</a>
+            <ion-item ng-repeat="key in item.subcate" class="class-subcate">
+                <a href="#/tab/talkList/{{key.fid}}">{{key.name}}</a>
+            </ion-item>
+        </ion-item>
+    </ion-content>
+</ion-view>

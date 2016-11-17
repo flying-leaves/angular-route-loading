@@ -1,0 +1,10 @@
+<ion-view view-title="文章详情">
+    <ion-content ng-repeat="item in detailList">
+        <h2>{{item.title}}</h2>
+        简介:<div class="card">
+                <div class="item item-text-wrap">{{item.summary}}</div>
+            </div>
+        <!--ng-bing-html解析html数据-->
+        <p ng-bind-html="item.content" class="item-text-wrap"></p>
+    </ion-content>
+</ion-view>

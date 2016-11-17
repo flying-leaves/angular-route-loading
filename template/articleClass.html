@@ -1,0 +1,18 @@
+<!--导航标题-->
+<ion-view view-title="文章分类">
+    <!--内容区-->
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="item in classList">
+                <!--区分不同链接地址-->
+                <a href="#tab/articleList/{{item.catid}}">{{item.catname}}</a>
+                <!--二级分类-->
+                <ion-list>
+                    <ion-item ng-repeat="key in item.subcate" class="class-subcate">
+                        <a href="#tab/articleList/{{key.catid}}">{{key.catname}}</a>
+                    </ion-item>
+                </ion-list>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>
